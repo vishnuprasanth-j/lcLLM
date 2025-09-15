@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
+
+	<Commands package="guidlcLLMPackage">
+		<Groups>
+			<Group guid="lcLLMCommand" id="MainMenuGroup" />
+		</Groups>
+
+		<Menus>
+			<Menu guid="lcLLMCommand" id="MainLcMenu" type="Menu">
+				<Strings>
+					<ButtonText>lcLLM</ButtonText>
+				</Strings>
+			</Menu>
+		</Menus>
+
+		<Buttons>
+			<Button guid="lcLLMCommand" id="cmdRequestRefactor" type="Button">
+				
+				<Strings>
+					<ButtonText>Refactor code</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="lcLLMCommand" id="cmdGenerateUnitTests" type="Button">
+				
+				<Strings>
+					<ButtonText>Generate unit tests</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="lcLLMCommand" id="cmdDocumentCode" type="Button">
+				
+				<Strings>
+					<ButtonText>Document code</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="lcLLMCommand" id="cmdCodeReview" type="Button">
+				
+				<Strings>
+					<ButtonText>Code review</ButtonText>
+				</Strings>
+			</Button>
+
+			<Button guid="lcLLMCommand" id="cmdManualPrompt" type="Button">
+				
+				<Strings>
+					<ButtonText>Manual Prompt</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<CommandPlacements>
+		<CommandPlacement guid="lcLLMCommand" id="MainLcMenu" priority="900">
+			<Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/>
+		</CommandPlacement>
+
+		<CommandPlacement guid="lcLLMCommand" id="MainMenuGroup" priority="0x0100">
+			<Parent guid="lcLLMCommand" id="MainLcMenu"/>
+		</CommandPlacement>
+
+		<CommandPlacement guid="lcLLMCommand" id="cmdRequestRefactor" priority="0x0101">
+			<Parent guid="lcLLMCommand" id="MainMenuGroup"/>
+		</CommandPlacement>
+
+		<CommandPlacement guid="lcLLMCommand" id="cmdGenerateUnitTests" priority="0x0102">
+			<Parent guid="lcLLMCommand" id="MainMenuGroup"/>
+		</CommandPlacement>
+
+		<CommandPlacement guid="lcLLMCommand" id="cmdDocumentCode" priority="0x0103">
+			<Parent guid="lcLLMCommand" id="MainMenuGroup"/>
+		</CommandPlacement>
+
+		<CommandPlacement guid="lcLLMCommand" id="cmdCodeReview" priority="0x0104">
+			<Parent guid="lcLLMCommand" id="MainMenuGroup"/>
+		</CommandPlacement>
+
+		<CommandPlacement guid="lcLLMCommand" id="cmdManualPrompt" priority="0x0105">
+			<Parent guid="lcLLMCommand" id="MainMenuGroup"/>
+		</CommandPlacement>
+	</CommandPlacements>
+
+	<KeyBindings>
+		<KeyBinding guid="lcLLMCommand" id="cmdRequestRefactor" editor="guidTextEditor" key1="VK_F1" mod1="SHIFT"/>
+		<KeyBinding guid="lcLLMCommand" id="cmdGenerateUnitTests" editor="guidTextEditor" key1="VK_F2" mod1="SHIFT"/>
+		<KeyBinding guid="lcLLMCommand" id="cmdDocumentCode" editor="guidTextEditor" key1="VK_F3" mod1="SHIFT"/>
+		<KeyBinding guid="lcLLMCommand" id="cmdCodeReview" editor="guidTextEditor" key1="VK_F4" mod1="SHIFT"/>
+	</KeyBindings>
+
+	<Symbols>
+		<GuidSymbol name="guidSHLMainMenu" value="{D309F791-903F-11D0-9EFC-00A0C911004F}" />
+		<GuidSymbol name="guidlcLLMPackage" value="{18763b3e-4e07-42f3-993e-65bea52b8c44}" />
+		<GuidSymbol name="guidTextEditor" value="{8B382828-6202-11D1-8870-0000F87579D2}" />
+
+		<GuidSymbol name="lcLLMCommand" value="{714b6862-aad7-434e-8415-dd928555ba02}">
+			<IDSymbol name="MainLcMenu" value="0x1020"/>
+			<IDSymbol name="MainMenuGroup" value="0x1021"/>
+			<IDSymbol name="cmdRequestRefactor" value="250"/>
+			<IDSymbol name="cmdGenerateUnitTests" value="251"/>
+			<IDSymbol name="cmdDocumentCode" value="252"/>
+			<IDSymbol name="cmdCodeReview" value="253"/>
+			<IDSymbol name="cmdManualPrompt" value="254"/>
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
